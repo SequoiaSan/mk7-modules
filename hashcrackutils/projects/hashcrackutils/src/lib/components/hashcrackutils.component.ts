@@ -9,6 +9,14 @@ import { ApiService } from '../services/api.service';
 export class hashcrackutilsComponent implements OnInit {
     constructor(private API: ApiService) { }
 
+    apiResponse = 'Press the button above to get the version.';
+
+    doAPIAction(): void {
+        this.API.APIGet('/api/status', (response) => {
+            this.apiResponse = response.versionString;
+        })
+    }
+
     ngOnInit() {
     }
 }
