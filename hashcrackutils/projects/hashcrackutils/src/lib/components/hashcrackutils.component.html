@@ -1,6 +1,10 @@
 <mat-card> 
     <mat-card-title>Welcome to MyModule</mat-card-title> 
     <mat-card-content> 
+        <mat-form-field>
+            <mat-label>Message to send to Module</mat-label>
+            <input matInput [(ngModel)]="userInput" />
+        </mat-form-field>
         <button mat-flat-button color="accent"
                                (click)="doAPIAction();"> 
             Request to Module 
